@@ -1,0 +1,36 @@
+security:
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+        Formation\UserBundle\Entity\User: sha512
+        FOS\UserBundle\ModelBundle\UserInterface: sha512
+
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+
+    providers:
+        fos_userbundle:
+                id: fos_user.user_provider.username
+
+    firewalls:
+        dev:
+            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        
+        main:
+            pattern: ^/
+            form_login:
+                provider: fos_userbundle
+                csrf_provider: form.csrf_provider
+                default_target_path: /article/create
+            logout: 
+                target: /cat/list
+            anonymous: true
+
+    access_control:
+        - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/resetting, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/article/create, roles: ROLE_ADMIN }
+        - { path: ^/com/create, roles: ROLE_USER }
+        - { path: ^/cat/create, roles: ROLE_ADMIN }

@@ -1,0 +1,19 @@
+formation_user_list:
+    pattern:  /user/list
+    defaults: { _controller: FormationUserBundle:User:list }
+    
+formation_user_detail:
+    pattern:  /user/detail/{id}
+    defaults: { _controller: FormationUserBundle:User:detail }
+
+formation_user_listArticle:
+    pattern:  /user/listArticle/{user_id}
+    defaults: { _controller: FormationUserBundle:User:listArticle }
+    requirements:
+        user_id: \d+
+        
+formation_user_listComsNotFrom:
+    pattern:  /user/listComsNotFrom/{user_id}
+    defaults: { _controller: FormationUserBundle:User:listComsNotFrom }
+    requirements:
+        user_id: \d+

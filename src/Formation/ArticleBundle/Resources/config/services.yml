@@ -1,0 +1,14 @@
+parameters:
+#    formation_article.example.class: Formation\ArticleBundle\Example
+
+services:
+    formation.censor:
+        class: Formation\ArticleBundle\Censor\Censor
+        arguments: ["@doctrine.orm.entity_manager"]
+        tags:
+             -    { name: formation }
+        
+        
+#    formation_article.example:
+#        class: %formation_article.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

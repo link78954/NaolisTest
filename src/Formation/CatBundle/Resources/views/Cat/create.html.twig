@@ -1,0 +1,9 @@
+{% extends 'FormationArticleBundle::layout.html.twig' %}
+    {%block body%}
+        <br/>
+        <h1>Nouvelle Cat !</h1>
+            <p>
+            <form method='POST' {{form_enctype(cForm)}}>
+            {{form_widget(cForm)}}
+            </form>
+    {%endblock%}{# empty Twig template #}

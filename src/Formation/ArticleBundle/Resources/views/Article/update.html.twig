@@ -1,0 +1,9 @@
+{% extends 'FormationArticleBundle::layout.html.twig' %}
+    {%block body%}
+        <br/>
+        <h1>Modifier l'article</h1>
+            <p>
+            <form method='POST' {{form_enctype(aForm)}}>
+            {{form_widget(aForm)}}
+            </form>
+    {%endblock%}{# empty Twig template #}

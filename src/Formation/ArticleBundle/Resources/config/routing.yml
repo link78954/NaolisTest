@@ -1,0 +1,29 @@
+formation_article_read:
+    pattern:  /article/read/{id}
+    defaults: { _controller: FormationArticleBundle:Article:read }
+    requirements:
+        id: \d+
+        
+formation_article_create:
+    pattern:  /article/create
+    defaults: { _controller: FormationArticleBundle:Article:create }
+
+formation_article_delete:
+    pattern:  /article/delete/{id}
+    defaults: { _controller: FormationArticleBundle:Article:delete }
+    requirements:
+        id: \d+
+        
+formation_article_update:
+    pattern:  /article/update/{id}
+    defaults: { _controller: FormationArticleBundle:Article:update }
+    requirements:
+        id: \d+
+        
+formation_article_list:
+    pattern:  /article/list/{limit}/{offset}/{cat}
+    defaults: { _controller: FormationArticleBundle:Article:list, limit: 5, offset: 0 , cat: 1}
+    
+formation_article_plop:
+    pattern:  /article/plop
+    defaults: { _controller: FormationArticleBundle:Article:plop }

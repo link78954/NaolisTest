@@ -1,0 +1,9 @@
+{% extends 'FormationComBundle::layout.html.twig' %}
+    {%block body%}
+        <br/>
+        <h1>Nouveau Commentaire</h1>
+            <p>
+            <form method='POST' {{form_enctype(cForm)}}>
+            {{form_widget(cForm)}}
+            </form>
+    {%endblock%}{# empty Twig template #}

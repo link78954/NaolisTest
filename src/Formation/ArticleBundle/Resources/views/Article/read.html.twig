@@ -1,0 +1,26 @@
+{# empty Twig template #}
+<body>
+    <table cellspacing="2" cellpadding="3" width="70%" align="center">
+        <tr>
+            <td  width="80%">
+                <h1><font color="red">{{Article.name}}</font>
+            </td>
+        </tr>
+        <tr>
+            <td width="80%">
+                <p>{{Article.text}}
+            </td>
+        </tr>
+        <tr>
+            <td width="80%"><a href="{{path('formation_user_detail',{'id':Article.user.id})}}"><font color="grey">{{Article.author}}</font></a></td>
+            <td><font color="grey">{{Article.datePublicatione|date('d-m-y')}}</font></td>
+        </tr>
+        {%for Com in listCom %}
+            <tr>
+                <td width="80%">
+                    <p>{{Com.text}}
+                </td>
+            </tr>   
+         {% endfor %} 
+    </table>
+</body>

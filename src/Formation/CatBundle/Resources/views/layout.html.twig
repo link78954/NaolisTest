@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>HTML</title>
+  </head>
+
+  <body bgcolor="#D6D7EF" topmargin="5">
+
+    <!-- Début Top Menu -->
+    <a name="top"></a>
+    <table border="0" cellpadding="0" cellspacing="0" width="80%" align="left">
+      <tr>
+        <td width="200" align="left">
+            <a href="http://localhost/symfony/app_dev.php" title="Accueil de mon exemple"><img src="http://www.naolis.com/portail/templates/naolis/images/NaOlis.png" alt="plop"></a>
+        </td>
+        <td width=571 valign="middle">
+          <a href="{{path('formation_article_list',{'limit':5, 'offset':0,'cat':1})}}"><font color="#400040" size="+1">Cat Patisserie</font></a> | 
+          <a href="{{path('formation_article_list',{'limit':5, 'offset':0,'cat':2})}}"><font color="#400040" size="+1">Cat Cuisine</font></a> | 
+          <a href="{{path('formation_article_list',{'limit':5, 'offset':0,'cat':3})}}"><font color="#400040" size="+1">Cat Boulanegrie</font></a> | 
+          <a href="{{path('formation_article_list',{'limit':5, 'offset':0,'cat':4})}}"><font color="#400040" size="+1">Cat Charcuterie</font></a> 
+          
+        </td>
+      </tr>
+    </table>
+    <!-- Fin Top Menu -->
+  {%block body %}    
+    <!-- Début Main Table -->
+    <table border="0" cellpadding="0" cellspacing="0" width="80%" align="center">
+      <tr>
+        <!-- Début Menu de Gauche -->
+        <td width="15%" align="right">
+          <p>
+            <font color="#000000"><span class="important">Titre</span></font><br />
+            lien 1<br />
+          </p>
+        </td>
+        <!-- Fin Menu de Gauche -->
+        
+        
+        <!-- Début Main Body -->
+        <td width="600" valign="top">
+          <h1 align="center">HTML !</h1>
+          
+        </td>
+        <!-- Fin Main Body -->
+      </tr>
+    </table>
+    <!-- Fin Main Table -->
+    {%endblock%}
+  </body>
+</html>

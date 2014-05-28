@@ -1,0 +1,15 @@
+{% extends 'FormationCatBundle::layout.html.twig' %}
+    {%block body%}
+        <br/>
+        <h1>Liste des cats</h1>
+        <table cellspacing="2" cellpadding="3" width="70%" align="center">
+            {%for cat in listCat %}
+                 <tr>
+                    <td  width="80%">
+                        <h1><font face="verdana" color="red">{{cat.name}}</font></a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        
+    {%endblock%}

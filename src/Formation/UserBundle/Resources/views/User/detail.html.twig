@@ -1,0 +1,14 @@
+{# empty Twig template #}
+<body>
+    <table cellspacing="2" cellpadding="3" width="70%" align="center">
+        <tr>
+            <td  width="80%">
+                <h1><font color="red">{{User.name ~ " " ~ User.firstname}}</font>
+            </td> 
+        </tr>
+        <tr>
+            <td width="80%">E-mail : <font color="grey">{{User.mail}}</font></td>
+            <td>Créé : <font color="grey">{{User.dateCreation|date('d-m-y')}}</font></td>
+        </tr>
+    </table>
+</body>

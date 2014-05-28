@@ -1,0 +1,37 @@
+{% extends 'FormationArticleBundle::layout.html.twig' %}
+    {%block body%}
+   <br/>
+        <h1><font color="black">Ça cé 1 bl0g kil é bi1 ! (é c le mi1)</font></h1>
+    <table cellspacing="2" cellpadding="3" width="70%" align="center">
+                    {% for flashMessage in app.session.flashbag.get('infos') %}
+                <h3>{{flashMessage}}</h3>
+            {%endfor%}
+        <h3><a href="{{path('formation_article_create')}}">Ajouter un Article</a><br/>
+    {%for Article in listArticle %}
+        <tr>
+            <td  width="80%">
+                {#<a href="http://localhost/symfony/web/app_dev.php/article/read/{{Article.id}}"><h1><font color="red">{{Article.name}}</font></a>#}
+                <a href="{{path('formation_article_read',{'id':Article.id})}}"><h1><font face="verdana" color="red">{{Article.name}}</font></a>
+            </td>
+        </tr>
+        <tr>
+            <td width="80%">
+                <h3>Catégorie : {%for cat in Article.cats%}{{cat.name}}{%if loop.last==false%}, {%endif%}{%endfor%}</h3>
+                <p><font face="verdana">{{Article.text}}</font> 
+            </td>
+        </tr>
+        <tr>
+            <td width="80%"><a href="{{path('formation_user_detail',{'id':Article.user.id})}}"><font color="blue">{{Article.author}}</font></a>
+                <a href="{{path('formation_article_update',{'id':Article.id})}}">Editer</a></td>
+            <td><font color="grey">{{Article.datePublicatione|date('d-m-y')}}</font></td>
+        </tr>
+    {% endfor %} 
+        <tr>
+            <td align="center">
+                Articles {{offset+1}} à {{offset+5}}
+                {%if offset >4%}<a href="{{path('formation_article_list',{'limit':5, 'offset':offset-5,'cat':cat})}}">Prev</a> • {%endif%}{%if allArticle|length > offset+5 %}<a href="{{path('formation_article_list',{'limit':5, 'offset':offset+5,'cat':cat})}}">Next</a>{%else%}Fin{%endif%}
+            </td>
+        </tr>
+    </table>
+    
+    {%endblock%}

@@ -1,0 +1,10 @@
+formation_com_listNotFrom:
+    pattern:  /com/notFrom/{user_id}
+    defaults: { _controller: FormationComBundle:Com:notFrom }
+    requirements:
+        user_id: \d+
+        
+        
+formation_com_create:
+    pattern:  /com/create
+    defaults: { _controller: FormationComBundle:Com:create }

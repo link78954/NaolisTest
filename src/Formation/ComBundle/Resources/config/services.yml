@@ -1,0 +1,7 @@
+parameters:
+#    formation_com.example.class: Formation\ComBundle\Example
+
+services:
+#    formation_com.example:
+#        class: %formation_com.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
